@@ -1,0 +1,39 @@
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+.delay-2 {
+  animation-delay: 0.25s;
+}
+.delay-3 {
+  animation-delay: 0.35s;
+}
+.delay-4 {
+  animation-delay: 0.45s;
+}
+.delay-5 {
+  animation-delay: 0.55s;
+}
+.delay-6 {
+  animation-delay: 0.65s;
+}
+.delay-7 {
+  animation-delay: 0.75s;
+}
+.delay-8 {
+  animation-delay: 0.85s;
+}
+.delay-9 {
+  animation-delay: 0.95s;
+}

@@ -5,8 +5,12 @@ body {
   font-size: 16px;
 }
 
-.logo {
+.isShrikhand {
   font-family: "Shrikhand", cursive;
+}
+
+.logo {
+  @extend .isShrikhand;
   font-size: 2.25em;
 }
 

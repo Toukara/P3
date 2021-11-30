@@ -9,7 +9,7 @@
   box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
 
   //   Colors
-  &-isGradient {
+  &--isGradient {
     @extend.btn;
     color: #fff;
     background-image: #{$gradient};
@@ -22,12 +22,12 @@
     }
   }
 
-  &-isPrimary {
+  &--isPrimary {
     color: #fff;
     background-color: #{$color-primary};
   }
 
-  &-isSecondary {
+  &--isSecondary {
     color: #fff;
     background-color: #{$color-secondary};
   }

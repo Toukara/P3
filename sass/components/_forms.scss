@@ -1,4 +1,5 @@
 @import "../utils/mixins";
+@import "../utils/animations";
 
 .location {
   @include flexbox_centered;
@@ -21,12 +22,21 @@
 .hero {
   background: #f6f6f6;
   padding: 1.75em;
+  text-align: center;
   &_content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+}
+
+.heroimg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .process {
@@ -62,6 +72,9 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  transition: all 0.125s;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
 
   &_img {
     height: 12rem;
@@ -82,7 +95,7 @@
     right: 0.75rem;
   }
 
-  &_footer {
+  &_text {
     padding: 1rem;
     position: relative;
     display: flex;
@@ -115,11 +128,14 @@
   }
 
   &_like {
-    background-color: white !important;
+    background-color: white;
+    &--bgGrey {
+      background-color: #f6f6f6;
+    }
   }
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 }
 
@@ -133,6 +149,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &_content {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 1rem;
   }
 
   &_btn {
@@ -190,6 +212,122 @@
       }
     }
   }
+
+  &_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16px;
+    font-size: 14px;
+  }
+
+  &_title {
+    font-weight: normal;
+    font-size: 18px;
+    padding-bottom: 6px;
+    position: relative;
+    text-transform: uppercase;
+    &::after {
+      background-color: $color-tertiary;
+      bottom: 0;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
+      width: 30px;
+    }
+  }
+
+  &_restaurant {
+    &_title {
+      font-weight: normal;
+    }
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &_card {
+    background-color: white;
+    border-radius: 16px;
+   box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    backface-visibility: hidden;
+    padding: 12px;
+    margin: 1rem auto;
+    cursor: pointer;
+    max-width: 100%;
+    overflow: hidden;
+    animation: slide-in 1s forwards;
+    opacity: 0;
+
+    &_text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &_title {
+      flex: 1;
+      font-size: 16px;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &_description {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &_price {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      font-weight: 700;
+    }
+
+    &_confirmation {
+      background-color: $color-tertiary;
+      margin: -1rem -5rem -1rem 1rem;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.5s;
+      opacity: 0;
+    }
+
+    &:hover &_confirmation {
+      margin-right: -1rem;
+      opacity: 1;
+    }
+
+    &_check-icon {
+      height: 1.6rem;
+      width: 1.6rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      transform: rotate(180deg);
+      transition-duration: 0.5s;
+    }
+
+    &:hover &_check-icon {
+      transform: rotate(0);
+    }
+
+    &_icon {
+      color: $color-tertiary;
+    }
+  }
 }
 
 .footer {
@@ -242,4 +380,8 @@
     width: 1.2rem;
     margin-right: 0.5rem;
   }
+}
+
+.menu {
+  margin-top: -3.5em;
 }

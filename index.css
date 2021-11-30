@@ -83,8 +83,11 @@ body {
   font-size: 16px;
 }
 
-.logo {
+.isShrikhand, .logo {
   font-family: "Shrikhand", cursive;
+}
+
+.logo {
   font-size: 2.25em;
 }
 
@@ -123,7 +126,6 @@ body,
 .footer {
   max-width: 768px;
   margin: 0 auto;
-  text-align: center;
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -141,13 +143,29 @@ body,
   position: relative;
   box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
   padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.header--noShadow {
+  position: relative;
+  box-shadow: none;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.header--noShadow i {
+  font-size: 28px;
 }
 
 .block:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
-.btn, .btn-isGradient {
+.btn, .btn--isGradient {
   border: none;
   padding: 1em 1.5em;
   border-radius: 32px;
@@ -155,19 +173,19 @@ body,
   margin: 1em 0;
   box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
 }
-.btn-isGradient {
+.btn--isGradient {
   color: #fff;
   background-image: linear-gradient(#FF79DA, #9356DC);
 }
-.btn-isGradient:hover {
+.btn--isGradient:hover {
   background-image: linear-gradient(#ff46cc, #782cd3);
   box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.2);
 }
-.btn-isPrimary {
+.btn--isPrimary {
   color: #fff;
   background-color: #9356DC;
 }
-.btn-isSecondary {
+.btn--isSecondary {
   color: #fff;
   background-color: #FF79DA;
 }
@@ -189,6 +207,53 @@ body,
 }
 .btn_process:hover i {
   color: #9356dc;
+}
+
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.25s;
+}
+
+.delay-3 {
+  animation-delay: 0.35s;
+}
+
+.delay-4 {
+  animation-delay: 0.45s;
+}
+
+.delay-5 {
+  animation-delay: 0.55s;
+}
+
+.delay-6 {
+  animation-delay: 0.65s;
+}
+
+.delay-7 {
+  animation-delay: 0.75s;
+}
+
+.delay-8 {
+  animation-delay: 0.85s;
+}
+
+.delay-9 {
+  animation-delay: 0.95s;
 }
 
 .location {
@@ -213,12 +278,21 @@ body,
 .hero {
   background: #f6f6f6;
   padding: 1.75em;
+  text-align: center;
 }
 .hero_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.heroimg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .process {
@@ -253,6 +327,9 @@ body,
   text-decoration: none;
   color: inherit;
   display: block;
+  transition: all 0.125s;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
 }
 .card_img {
   height: 12rem;
@@ -271,7 +348,7 @@ body,
   top: 1rem;
   right: 0.75rem;
 }
-.card_footer {
+.card_text {
   padding: 1rem;
   position: relative;
   display: flex;
@@ -299,11 +376,14 @@ body,
   justify-content: center;
 }
 .card_like {
-  background-color: white !important;
+  background-color: white;
+}
+.card_like--bgGrey {
+  background-color: #f6f6f6;
 }
 .card:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .menu {
@@ -316,6 +396,11 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.menu_content {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 1rem;
 }
 .menu_btn {
   height: 2rem;
@@ -359,6 +444,106 @@ body,
 }
 .menu_btn:hover .menu_like--noBg {
   opacity: 0;
+}
+.menu_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px;
+  font-size: 14px;
+}
+.menu_title {
+  font-weight: normal;
+  font-size: 18px;
+  padding-bottom: 6px;
+  position: relative;
+  text-transform: uppercase;
+}
+.menu_title::after {
+  background-color: #99E2D0;
+  bottom: 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 30px;
+}
+.menu_restaurant_title {
+  font-weight: normal;
+}
+.menu_restaurant_content {
+  display: flex;
+  flex-direction: column;
+}
+.menu_card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  backface-visibility: hidden;
+  padding: 12px;
+  margin: 1rem auto;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: hidden;
+  animation: slide-in 1s forwards;
+  opacity: 0;
+}
+.menu_card_text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu_card_title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu_card_description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu_card_price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-weight: 700;
+}
+.menu_card_confirmation {
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+.menu_card:hover .menu_card_confirmation {
+  margin-right: -1rem;
+  opacity: 1;
+}
+.menu_card_check-icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.menu_card:hover .menu_card_check-icon {
+  transform: rotate(0);
+}
+.menu_card_icon {
+  color: #99E2D0;
 }
 
 .footer {
@@ -404,6 +589,10 @@ body,
   margin-right: 0.5rem;
 }
 
+.menu {
+  margin-top: -3.5em;
+}
+
 .icon_process {
   display: flex;
   background: #9356dc;
@@ -417,6 +606,59 @@ body,
   font-size: 18px;
   margin-right: 10px;
   margin-left: -28px;
+}
+
+.arrow {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+}
+
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.25s;
+}
+
+.delay-3 {
+  animation-delay: 0.35s;
+}
+
+.delay-4 {
+  animation-delay: 0.45s;
+}
+
+.delay-5 {
+  animation-delay: 0.55s;
+}
+
+.delay-6 {
+  animation-delay: 0.65s;
+}
+
+.delay-7 {
+  animation-delay: 0.75s;
+}
+
+.delay-8 {
+  animation-delay: 0.85s;
+}
+
+.delay-9 {
+  animation-delay: 0.95s;
 }
 
 /*# sourceMappingURL=index.css.map */
