@@ -1,7 +1,9 @@
+@use "../utils/colors";
+
 .icon {
-  &_process {
+    &_process {
     display: flex;
-    background: #9356dc;
+    background: colors.$primary;
     border-radius: 50%;
     padding: 18px;
     width: 9px;
@@ -12,6 +14,7 @@
     font-size: 18px;
     margin-right: 10px;
     margin-left: -28px;
+
   }
 }
 

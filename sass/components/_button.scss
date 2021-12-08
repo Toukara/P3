@@ -1,4 +1,4 @@
-@import "../utils/colors";
+@use "../utils/colors";
 
 .btn {
   border: none;
@@ -12,11 +12,11 @@
   &--isGradient {
     @extend.btn;
     color: #fff;
-    background-image: #{$gradient};
+    background-image: #{colors.$gradient};
     &:hover {
       background-image: linear-gradient(
-        darken($color-secondary, 10%),
-        darken($color-primary, 10%)
+        darken(colors.$secondary, 10%),
+        darken(colors.$primary, 10%)
       );
       box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.2);
     }
@@ -24,12 +24,12 @@
 
   &--isPrimary {
     color: #fff;
-    background-color: #{$color-primary};
+    background-color: #{colors.$primary};
   }
 
   &--isSecondary {
     color: #fff;
-    background-color: #{$color-secondary};
+    background-color: #{colors.$secondary};
   }
 
   //variables
@@ -51,5 +51,17 @@
         color: #9356dc;
       }
     }
+  }
+
+  &_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+
+    > button {
+      padding: 1.5vh 12vw;
+    } 
+
   }
 }

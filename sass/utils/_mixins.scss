@@ -1,5 +1,40 @@
-@mixin flexbox_centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+  .process {
+    &_content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    &_element {
+      width: 80%;
+    }
+  }
+
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+
+    > .card {
+      flex: 0 40%;
+      width: 100%;
+    }
+  }
+
+  .footer_list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+  }
 }

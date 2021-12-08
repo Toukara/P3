@@ -1,21 +1,8 @@
 .container,
-body,
-.footer{
-  max-width: 768px;
+.footer {
+  max-width: 100%;
   margin: 0 auto;
 }
 
 
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .container {
-    max-width: 740px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 1170px;
-    width: 100%;
-  }
-}
