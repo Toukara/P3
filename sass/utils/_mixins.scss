@@ -1,10 +1,9 @@
+@use "../utils/colors";
+
 @media (min-width: 992px) {
 }
 
 @media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
   .process {
     &_content {
       display: flex;
@@ -17,12 +16,19 @@
     }
   }
 
+  .process > h1,
+  .restaurants > h1 {
+    margin: 2vh 9.5vw;
+  }
+
+  .process_content {
+    margin: 2vh 18vw;
+  }
 
   .cards {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
 
     > .card {
       flex: 0 40%;
@@ -30,11 +36,40 @@
     }
   }
 
-  .footer_list {
-      display: flex;
+  .card > img {
+    height: 300px;
+  }
+
+  .footer_container {
+    text-align: center;
+  }
+
+  .footer_text {
+    flex-direction: row;
+  }
+
+  .heroimg {
+    background-color: colors.$tertiary;
+    padding: 16px 0;
+  }
+
+  .menu {
+    margin: 0px;
+    border-radius: 0;
+    padding: 16px;
+    
+    &_header {
+      margin: 16px 60px;
+    }
+
+    &_restaurant_content {
       flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
-      text-align: center;
+      justify-content: center;
+      gap: 150px;
+    }
+
+    &_card {
+      width: 450px;
+    }
   }
 }
