@@ -703,6 +703,9 @@ body {
     justify-content: center;
     gap: 10px;
   }
+  .menu_card {
+    width: 28vw;
+  }
 }
 @keyframes slide-in {
   from {
