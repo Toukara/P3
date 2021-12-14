@@ -631,7 +631,19 @@ body {
   left: 1rem;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  .heroimg {
+    background-color: #99E2D0;
+    padding: 16px 0;
+  }
+
+  .menu {
+    margin: 0px;
+    border-radius: 0;
+    padding: 16px;
+  }
+}
+@media only screen and (min-width: 992px) {
   .process_content {
     display: flex;
     flex-direction: row;
@@ -647,7 +659,7 @@ body {
   }
 
   .process_content {
-    margin: 2vh 18vw;
+    margin: 2vh 10vw;
   }
 
   .cards {
@@ -661,7 +673,7 @@ body {
   }
 
   .card > img {
-    height: 300px;
+    height: 250px;
   }
 
   .footer_container {
@@ -686,12 +698,10 @@ body {
     margin: 16px 60px;
   }
   .menu_restaurant_content {
+    margin: 0 16px;
     flex-direction: row;
     justify-content: center;
-    gap: 150px;
-  }
-  .menu_card {
-    width: 450px;
+    gap: 10px;
   }
 }
 @keyframes slide-in {
