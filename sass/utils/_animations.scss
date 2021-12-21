@@ -1,3 +1,5 @@
+@use "../utils/colors";
+
 @keyframes slide-in {
   from {
     -webkit-transform: translateY(100%);
@@ -36,4 +38,94 @@
 }
 .delay-9 {
   animation-delay: 0.95s;
+}
+
+.animation {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+} 
+
+.loader {
+  width: 150px;
+  height: 150px;
+}
+svg {
+  width: 90%;
+  fill: none;
+}
+
+.load {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 570;
+  stroke-width: 20px;
+  &.one {
+    stroke: colors.$tertiary;
+    animation: load 1.5s infinite;
+  }
+  &.two {
+    stroke: colors.$secondary;
+    animation: load 1.5s infinite;
+    animation-delay: 0.1s;
+  }
+  &.three {
+    stroke: colors.$primary;
+    animation: load 1.5s infinite;
+    animation-delay: 0.2s;
+  }
+}
+
+.point {
+  animation: bounce 1s infinite ease-in-out;
+  &.one {
+    fill: colors.$primary;
+    animation-delay: 0s;
+  }
+  &.two {
+    fill: colors.$secondary;
+    animation-delay: 0.1s;
+  }
+  &.three {
+    fill: colors.$tertiary;
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes load {
+  0% {
+    stroke-dashoffset: 570;
+  }
+  50% {
+    stroke-dashoffset: 530;
+  }
+  100% {
+    stroke-dashoffset: 570;
+    transform: rotate(360deg);
+  }
 }
