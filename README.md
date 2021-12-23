@@ -17,8 +17,8 @@
 
 Polices:  [**Roboto**](https://fonts.google.com/specimen/Roboto) & [**Shrikhand**](https://fonts.google.com/specimen/Shrikhand)
 
-Couleurs : 
-| Couleur              | Hex                                                                |
+
+| Couleurs              | Hex                                                                |
 | ----------------- | -----------------------------------------------------------------  |
 | Couleur Primaire | ![#9356DC](https://via.placeholder.com/30/9356DC?text=+) **#9356DC**     |
 | Couleur Secondaire | ![#FF79DA](https://via.placeholder.com/30/FF79DA?text=+) **#FF79DA**     |
