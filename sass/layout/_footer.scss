@@ -1,0 +1,33 @@
+.footer {
+    background-color: #353535;
+    position: relative;
+  
+    &_container {
+      display: flex;
+      flex-direction: column;
+      padding: 3vh;
+      text-align: left;
+      margin-left: 1em;
+    }
+  
+    &_title {
+      color: white;
+      font-family: "Shrikhand", "cursive";
+      margin: 0;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+  
+    &_text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-evenly;
+      a {
+        color: white;
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
